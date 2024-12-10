@@ -148,3 +148,23 @@ install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/libconfigConfigVersion.cmake"
     DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/libconfig"
     )
+
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/libconfig.pc.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/libconfig.pc @ONLY
+    )
+
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/libconfig++.pc.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/libconfig++.pc @ONLY
+    )
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/libconfig.pc
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+    )
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/libconfig++.pc
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+    )
